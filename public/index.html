@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Charge do Mês</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Selecione o Mês para Ver a Charge</h1>
+        <div class="select-month">
+            <select id="month">
+                <option value="January">Janeiro</option>
+                <option value="February">Fevereiro</option>
+                <option value="March">Março</option>
+                <option value="April">Abril</option>
+                <option value="May">Maio</option>
+                <option value="June">Junho</option>
+                <option value="July">Julho</option>
+                <option value="August">Agosto</option>
+                <option value="September">Setembro</option>
+                <option value="October">Outubro</option>
+                <option value="November">Novembro</option>
+                <option value="December">Dezembro</option>
+            </select>
+            <button id="loadCharge">Carregar Charge</button>
+        </div>
+        <div class="charge-container">
+            <img id="chargeImage" src="" alt="Charge do Mês" style="display: none;" />
+        </div>
+    </div>
+
+    <script>
+        document.getElementById('loadCharge').addEventListener('click', function () {
+            const month = document.getElementById('month').value;
+            const chargeImage = document.getElementById('chargeImage');
+            chargeImage.src = `images/${month}.jpg`;
+            chargeImage.style.display = 'block';
+        });
+    </script>
+</body>
+</html>
